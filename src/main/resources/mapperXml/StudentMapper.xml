@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.tiny.mapper.StudentMapper">
+
+    <resultMap id="stuMap" type="io.tiny.entity.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="sumScore" column="score_sum"/>
+        <result property="avgScore" column="score_avg"/>
+        <result property="age" column="age"/>
+    </resultMap>
+
+    <select id="getById" resultMap="stuMap" resultType="io.tiny.entity.Student">
+		SELECT *
+		FROM STUDENT
+		WHERE ID = #{id}
+	</select>
+
+	<select id="getAllStudents" resultMap="stuMap" resultType="io.tiny.entity.Student">
+		SELECT *
+		FROM STUDENT
+	</select>
+
+    <insert id="add" parameterType="io.tiny.entity.Student">
+		INSERT 
+			INTO STUDENT(NAME,SCORE_SUM,SCORE_AVG,AGE)
+		VALUES
+			(#{name},#{sumScore},#{avgScore},#{age})
+	</insert>
+
+    <select id="likeName" resultMap="stuMap" parameterType="string" resultType="list">
+		SELECT *
+		FROM STUDENT
+		WHERE NAME LIKE CONCAT('%',#{name},'%')
+	</select>
+
+    <select id="getNameById" resultType="string">
+		SELECT NAME
+		FROM STUDENT
+		WHERE ID = #{id}
+	</select>
+
+
+</mapper> 

@@ -1,0 +1,30 @@
+# 主数据库
+spring.datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password:
+
+# 其他数据库
+custom.datasource:
+    names: ds1,ds2
+    ds1.type: com.alibaba.druid.pool.DruidDataSource
+    ds1.driverClassName: com.mysql.jdbc.Driver
+    ds1.url: jdbc:mysql://localhost:3306/test1
+    ds1.username: root
+    ds1.password: 
+
+    ds2.type: com.alibaba.druid.pool.DruidDataSource
+    ds2.driverClassName: com.mysql.jdbc.Driver
+    ds2.url: jdbc:mysql://localhost:3306/test2
+    ds2.username: root
+    ds2.password: 
+
+#JPA Configuration:
+#spring.jpa.show-sql: true
+
+mybatis:
+    mapper-locations: classpath*:sqlMapperXml/*Mapper.xml
+    type-aliases-package: io.tiny.entity
+

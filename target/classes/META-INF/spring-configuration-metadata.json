@@ -1,0 +1,41 @@
+{
+  "groups": [{
+    "name": "mybatis",
+    "type": "io.tiny.mybatis.MybatisProperties",
+    "sourceType": "io.tiny.mybatis.MybatisProperties"
+  }],
+  "properties": [
+    {
+      "name": "mybatis.check-config-location",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.tiny.mybatis.MybatisProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "mybatis.config",
+      "type": "java.lang.String",
+      "sourceType": "io.tiny.mybatis.MybatisProperties"
+    },
+    {
+      "name": "mybatis.executor-type",
+      "type": "org.apache.ibatis.session.ExecutorType",
+      "sourceType": "io.tiny.mybatis.MybatisProperties"
+    },
+    {
+      "name": "mybatis.mapper-locations",
+      "type": "org.springframework.core.io.Resource[]",
+      "sourceType": "io.tiny.mybatis.MybatisProperties"
+    },
+    {
+      "name": "mybatis.type-aliases-package",
+      "type": "java.lang.String",
+      "sourceType": "io.tiny.mybatis.MybatisProperties"
+    },
+    {
+      "name": "mybatis.type-handlers-package",
+      "type": "java.lang.String",
+      "sourceType": "io.tiny.mybatis.MybatisProperties"
+    }
+  ],
+  "hints": []
+}
